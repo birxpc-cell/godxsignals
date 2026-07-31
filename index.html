@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GODxSIGNALS ☠️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0b0213;
+            background-image: 
+                radial-gradient(circle at 50% 20%, #2c0b4d 0%, transparent 50%),
+                radial-gradient(circle at 50% 80%, #1a052e 0%, transparent 50%),
+                radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 160px 120px, #ffffff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .live-badge {
+            background: rgba(220, 38, 38, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            color: #ef4444;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .live-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #ef4444;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(168, 85, 247, 0.5);
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
+        }
+
+        .title {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            margin-top: 5px;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: #a1a1aa;
+            margin-top: -10px;
+        }
+
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #ec4899, #3b82f6);
+            border-radius: 2px;
+            margin: 5px 0;
+        }
+
+        .join-btn {
+            width: 100%;
+            padding: 16px;
+            background: rgba(23, 15, 38, 0.8);
+            border: 1px solid rgba(168, 85, 247, 0.5);
+            border-radius: 16px;
+            color: white;
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .join-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
+        }
+
+        .timer-box {
+            width: 100%;
+            background: rgba(23, 15, 38, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        .timer-title {
+            color: #fbbf24;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .timer-clock {
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .timer-desc {
+            font-size: 12px;
+            color: #a1a1aa;
+            line-height: 1.4;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .stat-item:not(:last-child) {
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-number {
+            font-size: 18px;
+            font-weight: 800;
+            color: #f87171;
+        }
+
+        .stat-number.yellow { color: #facc15; }
+        .stat-number.pink { color: #f472b6; }
+
+        .stat-label {
+            font-size: 10px;
+            color: #a1a1aa;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .footer {
+            font-size: 11px;
+            color: #71717a;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Live Badge -->
+        <div class="live-badge">
+            <span class="live-dot"></span> LIVE NOW
+        </div>
+
+        <!-- Profile Image -->
+        <img src="https://i.ibb.co/cXhHDPXT/IMG-20260731-192252-323.jpg" alt="Profile" class="profile-img">
+
+        <!-- Title -->
+        <h1 class="title">GODxSIGNALS ☠️</h1>
+        
+        <!-- Subtitle -->
+        <p class="subtitle">Your Premium Gaming Destination 🎰</p>
+
+        <!-- Divider Line -->
+        <div class="divider"></div>
+
+        <!-- Join Button -->
+        <a href="https://t.me/+Flk7nG1qgQViNTVl" class="join-btn">JOIN NOW</a>
+
+        <!-- Timer Box -->
+        <div class="timer-box">
+            <div class="timer-title">TIME LEFT FOR FREE JOIN</div>
+            <div class="timer-clock" id="timer">00:15</div>
+            <p class="timer-desc">Offer starts counting down as soon as you open the page.</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">50K+</span>
+                <span class="stat-label">MEMBERS</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number yellow">24/7</span>
+                <span class="stat-label">SUPPORT</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number pink">100%</span>
+                <span class="stat-label">SECURE</span>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            © 2026 All rights reserved.
+        </div>
+    </div>
+
+    <!-- Timer Script -->
+    <script>
+        let timeLeft = 15;
+        const timerElement = document.getElementById('timer');
+
+        const countdown = setInterval(() => {
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                timerElement.textContent = "00:00";
+            } else {
+                timeLeft--;
+                let seconds = timeLeft < 10 ? '0' + timeLeft : timeLeft;
+                timerElement.textContent = `00:${seconds}`;
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
